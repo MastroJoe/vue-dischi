@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Merriweather', serif;
+  font-family: 'Merriweather', sans-serif;
 }
 
 #root {
@@ -20,22 +20,19 @@
   cursor: pointer;
 }
 
-/* This container is needed to position the front and back side */
 .card-cover {
   position: relative;
   width: 100%;
   height: 100%;
   text-align: center;
-  transition: transform 0.8s;
+  transition: transform 0.7s;
   transform-style: preserve-3d;
 }
 
-/* Do an horizontal flip when you move the mouse over the flip box container */
 .card:hover .card-cover {
   transform: rotateY(180deg);
 }
 
-/* Position the front and back side */
 .card-front, .card-back {
   position: absolute;
   width: 100%;
@@ -43,20 +40,37 @@
   backface-visibility: hidden;
 }
 
-/* Style the front side (fallback if image is missing) */
 .card-front {
 width: 100%;
-padding-top: 100%;
 background-size: cover;
 background-repeat: no-repeat;
 }
 
-/* Style the back side */
 .card-back {
   background-color: #ffb88d;
-  color: #ff8000;
+  color: #ff9523;
   transform: rotateY(180deg);
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.card-back h1 {
+  padding-bottom: 10px;
+  font-size: 22px;
+}
+
+.card-back h2 {
+  padding: 5px 0;
+  font-size: 18px;
+}
+
+.card-back p {
+  padding: 10px 0;
+  font-weight: bold;
+}
+
+.card-back .genre {
+  font-weight: 700 ;
+  font-style: italic;
 }
