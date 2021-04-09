@@ -12,7 +12,20 @@
 </head>
 <body>
   <div id="root">
-
+    <div class="card"
+         v-for="album in albums">
+      <div class="card-cover">
+        <div class="card-front"
+             :style="`background-image: url('${album.poster}')`">
+        </div>
+        <div class="card-back">
+          <h1>{{ album.title }}</h1>
+          <h2>{{ album.author }}</h2>
+          <p>{{ album.genre }}</p>
+          <p>{{ album.year }}</p>
+        </div>
+      </div>
+    </div>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js" charset="utf-8"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue"></script>
